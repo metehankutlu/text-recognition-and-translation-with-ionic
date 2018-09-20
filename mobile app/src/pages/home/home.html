@@ -1,0 +1,49 @@
+
+<ion-content style="height: 100%">
+  <ion-grid style="height: 100%">
+    <ion-row style="height: 100%" align-items-center>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-input [(ngModel)]="ip"></ion-input>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-select [(ngModel)]="srcLang" class="myCustomSelect">
+              <ion-option *ngFor="let lang of srcLangList" value="{{lang.val}}">{{lang.text}}</ion-option>
+            </ion-select>
+          </ion-col>
+          <ion-col>
+            <ion-select [(ngModel)]="destLang" class="myCustomSelect">
+              <ion-option *ngFor="let lang of destLangList" value="{{lang.val}}">{{lang.text}}</ion-option>
+            </ion-select>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <button ion-button color="light" full (click)="takePhoto(1);"><ion-icon name="camera"></ion-icon></button>
+          </ion-col>
+          <ion-col>
+            <button ion-button color="light" full (click)="takePhoto(0);"><ion-icon name="folder"></ion-icon></button>
+          </ion-col>
+        </ion-row>
+        <!--<ion-row>
+          <ion-col>
+            <img #imageSrc />
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            {{processedText.value}}
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            {{path}}
+          </ion-col>
+        </ion-row>-->
+      </ion-grid>
+    </ion-row>
+  </ion-grid>
+</ion-content>

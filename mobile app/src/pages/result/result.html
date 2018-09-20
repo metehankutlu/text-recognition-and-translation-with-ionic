@@ -1,0 +1,40 @@
+<ion-grid>
+  <ion-row>
+    <ion-col>
+      <ion-input [(ngModel)]="ip"></ion-input>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-select [(ngModel)]="srcLang" class="myCustomSelect">
+        <ion-option *ngFor="let lang of srcLangList" value="{{lang.val}}">{{lang.text}}</ion-option>
+      </ion-select>
+    </ion-col>
+    <ion-col>
+      <ion-select [(ngModel)]="destLang" class="myCustomSelect">
+        <ion-option *ngFor="let lang of destLangList" value="{{lang.val}}">{{lang.text}}</ion-option>
+      </ion-select>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-item>
+        <ion-label floating>Detected Text</ion-label>
+        <ion-textarea [(ngModel)]="dText" #dInput (keyup)="resize()"></ion-textarea>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-item>
+        <ion-label floating>Translated Text</ion-label>
+        <ion-textarea [(ngModel)]="tText" #tInput (keyup)="resize()"></ion-textarea>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col col-6 offset-3>
+      <button ion-button color="light" full (click)="translate()">Translate</button>
+    </ion-col>
+  </ion-row>
+</ion-grid>

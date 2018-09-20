@@ -1,0 +1,32 @@
+<!--
+ * Demo of Cropper.js v1.3.1 with Ionic v3
+ * https://github.com/itsru/Ionic3-Camera-with-CropperJS
+ *
+ * Copyright (c) 2018 Ru Selvadurai
+ * Released under the MIT license
+ *
+ * Date: 2018-02-28
+-->
+ <ion-header>
+  <ion-toolbar color="dark">
+    <ion-title i18n>Crop</ion-title>
+    <ion-buttons padding-left padding-right end>
+      <button ion-button icon-only (click)="finish()">
+        <ion-icon name='checkmark'></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="background">
+  <ion-list>
+    <ion-item>
+      <ion-range min="-180" max="180" step="1" [(ngModel)]="rangeValue" (ionChange)="degreeChange()" color="primary">
+        <ion-label range-left>-180</ion-label>
+        <ion-label range-right>180</ion-label>
+      </ion-range>
+    </ion-item>
+    <ion-item>
+      <img [src]="imageData" (load)="cropperLoad()" #image>
+    </ion-item>
+  </ion-list>
+</ion-content>
